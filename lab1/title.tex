@@ -1,0 +1,63 @@
+\newcommand{\UNIVERSITY}{Санкт-Петербургский Национальный Исследовательский Университет ИТМО}
+\newcommand{\FACULTY}{Факультет Программной Инженерии и Компьютерной Техники}
+\newcommand{\WORKTYPE}{Расчётно-графическая работа}
+\newcommand{\WORKNUMBER}{№ 1}
+\newcommand{\WORKTITLE}{Линейная алгебра. 2 семестр}
+\newcommand{\VARIANT}{№ 17}
+\newcommand{\STUDENT}{Михальченков Александр Николаевич}
+\newcommand{\GROUP}{P3109}
+\newcommand{\TEACHER}{Слободянюк Михаил Юрьевич}
+\newcommand{\CITY}{Санкт-Петербург}
+\newcommand{\YEAR}{2026}
+\newcommand{\InsertLogo}[1]{
+  \IfFileExists{#1}{
+    \includegraphics[width=0.35\textwidth]{#1}
+  }{
+    \makebox[0pt][c]{\rule{0pt}{45pt}}
+  }
+}
+
+\begin{titlepage}
+\thispagestyle{empty}
+
+\begin{center}
+\resizebox{\textwidth}{!}{\mbox{\UNIVERSITY}}
+
+\vspace{0.5cm}
+\FACULTY
+
+\vspace{1.8cm}
+\InsertLogo{itmo_logo.png}
+
+\vspace{1.5cm}
+{\large \WORKTYPE\ \WORKNUMBER}
+
+\vspace{0.5cm}
+{\large \WORKTITLE}
+
+\vspace{0.5cm}
+{\large Вариант \VARIANT}
+\end{center}
+
+\vfill
+
+\begin{flushright}
+Выполнил:\\
+\STUDENT\\
+\GROUP
+
+\vspace{0.8cm}
+Проверил:\\
+\TEACHER
+\end{flushright}
+
+\vfill
+
+\begin{center}
+\CITY\\
+\YEAR
+\end{center}
+
+\end{titlepage}
+
+\setcounter{page}{2}

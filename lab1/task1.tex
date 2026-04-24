@@ -1,0 +1,419 @@
+\section{Задание 1. Ортогональное дополнение}
+
+Линейное подпространство $L$ евклидова пространства $E$ задано системой уравнений.
+
+1. Найдите систему уравнений, задающую ортогональное дополнение $L^\perp$.
+
+2. Найдите ортонормированный базис $L^\perp$.
+
+3. Дополните полученный базис $L^\perp$ до ортонормированного базиса пространства $E$.
+\vspace{0.3cm}
+\[
+17.\quad
+\begin{cases}
+x_1 - x_3 + x_4 = 0, \\
+x_1 + x_2 + x_3 = 0, \\
+x_2 + x_3 - 2x_4 = 0.
+\end{cases}
+\]
+
+\textbf{Решение.}
+
+Составим матрицу системы и приведём её к ступенчатому виду:
+\[
+A=
+\begin{pmatrix}
+1 & 0 & -1 & 1\\
+1 & 1 & 1 & 0\\
+0 & 1 & 1 & -2
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & -1 & 1\\
+0 & 1 & 2 & -1\\
+0 & 1 & 1 & -2
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & -1 & 1\\
+0 & 1 & 2 & -1\\
+0 & 0 & -1 & -1
+\end{pmatrix}.
+\]
+
+\[
+(r=3 \;\Rightarrow\; \dim L = n - r = 4 - 3 = 1)
+\]
+
+Получаем систему
+\[
+\left\{
+\begin{aligned}
+x_1 - x_3 + x_4 &= 0,\\
+x_2 + 2x_3 - x_4 &= 0,\\
+-x_3 - x_4 &= 0.
+\end{aligned}
+\right.
+\]
+
+Отсюда
+\[
+x_3=-x_4,\qquad
+x_2=3x_4,\qquad
+x_1=-2x_4.
+\]
+
+Следовательно,
+\[
+x=
+x_4
+\begin{pmatrix}
+-2\\
+3\\
+-1\\
+1
+\end{pmatrix},
+\]
+поэтому
+\[
+v=
+\begin{pmatrix}
+-2\\
+3\\
+-1\\
+1
+\end{pmatrix}
+\]
+-- базис $L$.
+
+\bigskip
+
+\textbf{1. Найдём систему уравнений, задающую $L^\perp$.}
+
+\[
+x\in L^\perp
+\iff
+(\forall v\in L)\ (v,x)=0.
+\]
+
+Так как базис $L$ состоит из одного вектора
+\[
+v=
+\begin{pmatrix}
+-2\\
+3\\
+-1\\
+1
+\end{pmatrix},
+\]
+то условие ортогональности имеет вид
+\[
+-2x_1+3x_2-x_3+x_4=0.
+\]
+
+Значит, система уравнений, задающая $L^\perp$, такова:
+\[
+{-2x_1+3x_2-x_3+x_4=0.}
+\]
+
+\[
+r=1 \;\Rightarrow\; \dim L^\perp = 4-1=3.
+\]
+
+\newpage
+
+\textbf{2. Найдём ортонормированный базис $L^\perp$.}
+
+Базисом $L^\perp$ являются строки матрицы $A$:
+\[
+a_1=
+\begin{pmatrix}
+1\\
+0\\
+-1\\
+1
+\end{pmatrix},
+\qquad
+a_2=
+\begin{pmatrix}
+1\\
+1\\
+1\\
+0
+\end{pmatrix},
+\qquad
+a_3=
+\begin{pmatrix}
+0\\
+1\\
+1\\
+-2
+\end{pmatrix}.
+\]
+
+Ортогонализуем базис $a_1,a_2,a_3$ с помощью процесса ортоногализации Грама--Шмидта.
+
+\[
+b_1=a_1=
+\begin{pmatrix}
+1\\
+0\\
+-1\\
+1
+\end{pmatrix}.
+\]
+
+Так как
+\[
+(b_1,a_2)=1+0-1+0=0,
+\]
+то
+\[
+b_2=a_2=
+\begin{pmatrix}
+1\\
+1\\
+1\\
+0
+\end{pmatrix}.
+\]
+
+Далее
+\[
+(b_1,b_1)=1+0+1+1=3,\qquad
+(b_2,b_2)=1+1+1+0=3,
+\]
+\[
+(b_1,a_3)=0+0-1-2=-3,\qquad
+(b_2,a_3)=0+1+1+0=2.
+\]
+
+Тогда
+\[
+b_3=a_3-\frac{(b_1,a_3)}{(b_1,b_1)}\,b_1-\frac{(b_2,a_3)}{(b_2,b_2)}\,b_2.
+\]
+
+Подставим:
+\[
+b_3=
+\begin{pmatrix}
+0\\
+1\\
+1\\
+-2
+\end{pmatrix}
+-\frac{-3}{3}
+\begin{pmatrix}
+1\\
+0\\
+-1\\
+1
+\end{pmatrix}
+-\frac{2}{3}
+\begin{pmatrix}
+1\\
+1\\
+1\\
+0
+\end{pmatrix}.
+\]
+
+\[
+b_3=
+\begin{pmatrix}
+0\\
+1\\
+1\\
+-2
+\end{pmatrix}
++
+\begin{pmatrix}
+1\\
+0\\
+-1\\
+1
+\end{pmatrix}
+-
+\begin{pmatrix}
+\frac23\\
+\frac23\\
+\frac23\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac13\\
+\frac13\\
+-\frac23\\
+-1
+\end{pmatrix}
+=
+\frac13
+\begin{pmatrix}
+1\\
+1\\
+-2\\
+-3
+\end{pmatrix}.
+\]
+
+Таким образом, ортогональный базис $L^\perp$:
+\[
+b_1=
+\begin{pmatrix}
+1\\
+0\\
+-1\\
+1
+\end{pmatrix},
+\qquad
+b_2=
+\begin{pmatrix}
+1\\
+1\\
+1\\
+0
+\end{pmatrix},
+\qquad
+b_3=\frac13
+\begin{pmatrix}
+1\\
+1\\
+-2\\
+-3
+\end{pmatrix}.
+\]
+
+Нормируем эти векторы:
+\[
+\|b_1\|=\sqrt{1+0+1+1}=\sqrt3,\qquad
+\]
+\[
+\|b_2\|=\sqrt{1+1+1+0}=\sqrt3,\qquad
+\]
+\[
+\|b_3\|=
+\left\|
+\frac13
+\begin{pmatrix}
+1\\
+1\\
+-2\\
+-3
+\end{pmatrix}
+\right\|
+=\frac13
+\left\|
+\begin{pmatrix}
+1\\
+1\\
+-2\\
+-3
+\end{pmatrix}
+\right\|
+=\frac{\sqrt{1+1+4+9}}{3}=\frac{\sqrt{15}}{3}.
+\]
+
+Получаем ортонормированный базис $L^\perp$:
+\[
+c_1=\frac{b_1}{\|b_1\|}
+=\frac1{\sqrt3}
+\begin{pmatrix}
+1\\
+0\\
+-1\\
+1
+\end{pmatrix},
+\qquad
+c_2=\frac{b_2}{\|b_2\|}
+=\frac1{\sqrt3}
+\begin{pmatrix}
+1\\
+1\\
+1\\
+0
+\end{pmatrix},
+\]
+\[
+c_3=\frac{b_3}{\|b_3\|}
+=\frac13
+\begin{pmatrix}
+1\\
+1\\
+-2\\
+-3
+\end{pmatrix}
+\cdot\frac3{\sqrt{15}}
+=\frac1{\sqrt{15}}
+\begin{pmatrix}
+1\\
+1\\
+-2\\
+-3
+\end{pmatrix}.
+\]
+
+\bigskip
+
+\textbf{3. Дополним полученный базис $L^\perp$ до ортонормированного базиса пространства $E$.}
+
+Нормируем вектор базиса $L$:
+\[
+v=
+\begin{pmatrix}
+-2\\
+3\\
+-1\\
+1
+\end{pmatrix},
+\qquad
+\|v\|=\sqrt{4+9+1+1}=\sqrt{15}.
+\]
+
+Тогда
+\[
+u=\frac1{\sqrt{15}}
+\begin{pmatrix}
+-2\\
+3\\
+-1\\
+1
+\end{pmatrix}.
+\]
+
+Следовательно, ортонормированный базис пространства $E$:
+{\hfuzz=5pt
+\[
+c_1=\frac1{\sqrt3}
+\begin{pmatrix}
+1\\
+0\\
+-1\\
+1
+\end{pmatrix},
+\quad
+c_2=\frac1{\sqrt3}
+\begin{pmatrix}
+1\\
+1\\
+1\\
+0
+\end{pmatrix},
+\quad
+c_3=\frac1{\sqrt{15}}
+\begin{pmatrix}
+1\\
+1\\
+-2\\
+-3
+\end{pmatrix},
+\quad
+u=\frac1{\sqrt{15}}
+\begin{pmatrix}
+-2\\
+3\\
+-1\\
+1
+\end{pmatrix}.
+\]
+}
